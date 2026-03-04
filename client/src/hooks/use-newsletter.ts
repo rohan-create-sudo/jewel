@@ -11,8 +11,18 @@ export function useSubscribeNewsletter() {
       });
       
       if (!res.ok) {
-        const error = await res.json();
-        throw new Error(error.message || "Failed to subscribe to newsletter");
+        if (res.status === 404 && window.location.hostname.endsWith("github.io")) {
+          throw new Error("Newsletter signup needs a backend server and is disabled on GitHub Pages.");
+        }
+
+        const isJson = res.headers.get("content-type")?.includes("application/json");
+        if (isJson) {
+          const error = await res.json();
+          throw new Error(error.message || "Failed to subscribe to newsletter");
+        }
+
+        const errorText = await res.text();
+        throw new Error(errorText || "Failed to subscribe to newsletter");
       }
       
       return res.json();

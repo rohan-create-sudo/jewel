@@ -11,8 +11,18 @@ export function useSubmitContact() {
       });
       
       if (!res.ok) {
-        const error = await res.json();
-        throw new Error(error.message || "Failed to send message");
+        if (res.status === 404 && window.location.hostname.endsWith("github.io")) {
+          throw new Error("Contact form needs a backend server and is disabled on GitHub Pages.");
+        }
+
+        const isJson = res.headers.get("content-type")?.includes("application/json");
+        if (isJson) {
+          const error = await res.json();
+          throw new Error(error.message || "Failed to send message");
+        }
+
+        const errorText = await res.text();
+        throw new Error(errorText || "Failed to send message");
       }
       
       return res.json();
