@@ -89,15 +89,21 @@ app.use((req, res, next) => {
   // Other ports are firewalled. Default to 5000 if not specified.
   // this serves both the API and the client.
   // It is the only port that is not firewalled.
-  const port = parseInt(process.env.PORT || "5000", 10);
-  httpServer.listen(
-    {
-      port,
-      host: "0.0.0.0",
-      reusePort: true,
-    },
-    () => {
-      log(`serving on port ${port}`);
-    },
-  );
+  let port = parseInt(process.env.PORT || "5000", 10);
+  const host = "0.0.0.0";
+
+  httpServer.on("error", (error: NodeJS.ErrnoException) => {
+    if (error.code === "EADDRINUSE") {
+      port += 1;
+      log(`port in use, retrying on ${port}`, "express");
+      httpServer.listen({ port, host, reusePort: true });
+      return;
+    }
+
+    throw error;
+  });
+
+  httpServer.listen({ port, host, reusePort: true }, () => {
+    log(`serving on port ${port}`);
+  });
 })();
