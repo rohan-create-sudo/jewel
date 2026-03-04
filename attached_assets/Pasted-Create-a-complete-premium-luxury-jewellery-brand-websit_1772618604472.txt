@@ -1,0 +1,197 @@
+Create a complete premium luxury jewellery brand website for:
+
+Brand Name: Reva Jewels
+
+Tech Stack:
+
+* HTML
+* CSS
+* JavaScript
+* GSAP for animations
+* Fully responsive
+* Clean folder structure
+* No frameworks
+* Production-ready code
+
+Design Style:
+
+* Ultra luxury
+* Elegant
+* Premium jewellery aesthetic
+* Black and gold theme
+* Smooth cinematic animations
+* Modern typography
+* High-end fashion brand vibe
+
+========================================
+HERO SECTION (Very Important)
+=============================
+
+Create a full-screen hero section with this animation sequence:
+
+1. Background initially pure black.
+2. A golden 3D ring appears in the center.
+3. The ring rotates in 3D space (rotateY 360°) using GSAP.
+4. After rotation completes:
+
+   * Ring slightly tilts (rotateX small angle).
+   * Ring smoothly slides to the left.
+5. As the ring slides left:
+
+   * The brand name "Reva Jewels" emerges from inside the ring.
+   * Text should animate from left to right (like coming out of the ring).
+6. Ring then fades out smoothly.
+7. Brand name scales down to become a centered elegant logo.
+8. Background image (assets/jewel.jpg) fades in smoothly.
+9. A CTA button "Explore Collection" appears with smooth fade + upward motion.
+
+Animation must be smooth, cinematic and elegant.
+
+Use GSAP timeline for precise sequencing.
+
+========================================
+HEADER (After Animation Completes)
+==================================
+
+Create a fixed transparent header that becomes solid black on scroll.
+
+Header includes:
+
+* Left: Reva Jewels logo text
+* Right: Navigation links
+
+  * Home
+  * Collections
+  * About
+  * Craftsmanship
+  * Contact
+* Mobile hamburger menu
+
+Add smooth scroll behavior.
+
+========================================
+SECTIONS TO INCLUDE
+===================
+
+1. Featured Collection Section
+
+* Grid layout (3 or 4 cards)
+* Each card:
+
+  * Image
+  * Product Name
+  * Price
+  * "View Details" button
+* Hover animation:
+
+  * Image zoom slightly
+  * Gold border glow
+
+2. About Reva Jewels
+
+* Elegant two-column layout
+* Left: Text about brand philosophy
+* Right: Image
+* Subtle fade-in animation on scroll
+
+3. Craftsmanship Section
+
+* Dark background
+* 3 columns:
+
+  * Handcrafted
+  * Premium Materials
+  * Timeless Design
+* Icons with subtle animation
+
+4. Testimonials Section
+
+* Minimal slider
+* Smooth fade transitions
+
+5. Newsletter Subscription
+
+* Centered layout
+* Email input
+* Gold button
+* Clean styling
+
+6. Footer
+
+* Logo
+* Navigation links
+* Social media icons
+* Copyright text
+
+========================================
+ANIMATIONS
+==========
+
+* Use GSAP for:
+
+  * Hero animation
+  * Scroll fade-ins
+  * Section reveals
+* Use smooth easing (power3.inOut or similar)
+* No janky motion
+
+========================================
+STYLING DETAILS
+===============
+
+Colors:
+
+* Primary: Black (#000000)
+* Gold gradient: #d4af37 → #f5d77a → #b8860b
+* Text: White
+* Accent glow: Soft gold
+
+Typography:
+
+* Use Google Font (e.g., Poppins or Playfair Display for luxury feel)
+
+Spacing:
+
+* Generous whitespace
+* Large elegant typography
+* Clean alignment
+
+========================================
+RESPONSIVENESS
+==============
+
+* Fully responsive
+* Hero animation works on mobile
+* Mobile nav menu
+* Proper scaling typography
+
+========================================
+FILE STRUCTURE
+==============
+
+Provide:
+
+* index.html
+* style.css
+* script.js
+
+Do NOT compress everything into one file.
+Keep code clean and organized.
+
+========================================
+EXTRA PREMIUM TOUCHES
+=====================
+
+Add:
+
+* Smooth scroll behavior
+* Button hover glow effect
+* Subtle parallax in hero background
+* Slight floating idle animation for logo after intro
+* Clean transition between sections
+
+Make it look like a high-end luxury jewellery brand website comparable to premium fashion houses.
+
+Ensure all animations are smooth, elegant, and performance optimized.
+
+Return full working code.
